@@ -1,0 +1,101 @@
+
+* { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+a { text-decoration: none; }
+.FL { float: left; }
+.FR { float: right; }
+.clearfix:after {
+	display: block;
+	content: '.';
+	clear: both;
+	line-height: 0;
+	visibility: hidden;
+}
+input[type="button"]{
+	padding: 6px 10px;
+	background-color: #eee;
+	border: none;
+}
+input[type="button"]:hover{
+	color: #fff;
+	background-color: #00B51D;
+}
+
+input[type="checkbox"]{
+	margin: 1px;
+}
+input[type="text"]{
+	width: 100%; height: 26px;
+	text-indent: 10px;
+}
+
+.W1080 {
+	width: 1080px;
+	margin: 0 auto;
+}
+.BG {
+	background-color: #2a8c70;
+}
+.BG h2 {
+	width: 1080px; height: 50px;
+	line-height: 50px;
+	margin: auto;
+	color: #fff;
+}
+h3 {
+	padding: 20px 0;
+}
+h4 {
+	padding: 20px 0;
+}
+.add-task {
+	width: 100%; height: 30px;
+	margin-bottom: 20px;
+	text-indent: 10px;
+}
+.tip {
+	color: #ff7198;
+}
+.task-list li {
+	margin-bottom: 10px;
+	list-style: none;
+	border-bottom: 1px solid #eee;
+}
+.task-list li label{
+	margin: 0 20px;
+}
+.task-list .finish {
+	color: #999;
+}
+.task-list .finish label{
+	text-decoration: line-through;
+}
+.no-task {
+	line-height: 30px;
+	text-indent: 16px;
+	color: #ff7198;
+	font-size: 14px;
+	background-color: #eee;
+}
+
+.edit-box{
+	display: none;
+}
+.edit .edit-box {
+	display: block;
+}
+.edit .FR, .edit .FL{
+	display: none;
+}
+
+.wrap a {
+	color: #333;
+	font-size: 14px;
+	padding: 4px 8px;
+}
+.wrap a.active{
+	color: #fff;
+	background-color: #00B51D;
+}

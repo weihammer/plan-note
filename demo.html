@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>plan</title>
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+
+</head>
+<body>
+<div class="BG">
+    <h2>任务计划列表</h2>
+</div>
+<div class="W1080 INDEX" id="plan">
+    <h3>添加任务</h3>
+    <input
+            class="add-task" type="text"
+            placeholder="请输入添加的任务, 按回车键即可保存"
+            v-model="todo"
+            @keyup.enter="add"/>
+    <div class="clearfix">
+        <span class="tip">{{ noChecked }}个任务未完成</span>
+        <div class="FR wrap">
+            <a href="#all" :class="{active:active[1]}" @click="onFn(1)">所有任务</a>
+            <a href="#unfinish" :class="{active:active[2]}" @click="onFn(2)">未完成的任务</a>
+            <a href="#finish" :class="{active:active[3]}" @click="onFn(3)">完成的任务</a>
+        </div>
+    </div>
+    <h4>任务列表</h4>
+    <ul class="task-list" v-show="list.length">
+        <li class="clearfix"
+            v-for="item in filterList"
+            :class="{finish: item.isChecked, edit: item === editText}"
+        >
+            <input class="FL" type="checkbox" v-model="item.isChecked"/>
+            <label class="FL" @dblclick="editing(item)">{{ item.title }}</label>
+            <input
+                    class="edit-box" type="text"
+                    v-model="item.title"
+                    v-focus="editText === item"
+                    @blur="editFinish(item)"
+                    @keyup.enter="editFinish(item)"
+                    @keyup.esc="cancel(item)"
+            />
+            <input class="FR" type="button" name="" value="删除" @click="del(item)"/>
+        </li>
+    </ul>
+    <p class="no-task" v-show="!list.length">还没有添加任何任务</p>
+</div>
+
+</body>
+</html>
+<script src="./vue.js"></script>
+<script src="./demo.js"></script>
